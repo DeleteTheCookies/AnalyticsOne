@@ -8,11 +8,12 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 
-import requests
-import json
-
 def first():
-    
+    import requests
+    import json
+
+    #TODO: Need to get customers to create a list in first.html
+
     apiKey = '611b3ae684fcfa623a511f22aecba2f7'
     payload = {
     	"_id": "",
@@ -25,13 +26,17 @@ def first():
 
     apibody = requests.get(
         url,
-	    params = payload,
+	    params=payload,
 	    headers={'content-type':'application/json'},
 	)
 
-    return dict(apibody)
+    # parsedjson = json.dumps(apibody)
+
+    return apibody.status_code
 
 def second():
+    #TODO: Need to get the accounts associated to the customer
+
     return dict()
 
 def index():
