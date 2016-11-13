@@ -29,9 +29,7 @@ def first():
 
     parsed_json = json.loads(apibody.text)
 
-    returnString = str(parsed_json[0]['first_name'])
-
-    return returnString
+    return dict(message=parsed_json)
 
 def second():
     #TODO: Need to get the accounts associated to the customer
