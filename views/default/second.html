@@ -89,9 +89,22 @@ header div img {
     display: flex;
     }
 
+    /* Use this selector to override bar styles on bar charts. Bars are also strokes so you have maximum freedom in styling them. */
+.ct-series-a .ct-bar {
+  /* Colour of your bars */
+  stroke: lightgray;
+  /* The width of your bars */
+  stroke-width: 20px;
+  /* Yes! Dashed bars! */
+  stroke-dasharray: 20px;
+  /* Maybe you like round corners on your bars? */
+  stroke-linecap: round;
+}
+
     </style>
 
 <div class="flex-container">
+
     <div class="flex-item">
         <h1>Analytics One</h1>
             <div><img src = "logo.png" alt="profile" style="width:128px;height:128px;"></img></div>
@@ -101,14 +114,16 @@ header div img {
        <h1>Profiles </h1>
         <div><img src = "man-3.png" alt="profile" style="width:128px;height:128px;"></img>
         <p>Account 1</p>
+        <div class="ct-bar" id="chart2"></div>
     </div> 
-
     
 </div>
 
-<script>
+</body>
 
-new Chartist.Bar('.ct-chart', {
+   <script>
+
+new Chartist.Bar('#chart2', {
   labels: ['Deposits', 'Balance', 'Rewards'],
   series: [60, 120, 100]
 }, {
@@ -116,9 +131,4 @@ new Chartist.Bar('.ct-chart', {
 });
 </script>
 
-
-</body>
-
 </html>
-
-
