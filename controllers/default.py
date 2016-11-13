@@ -8,21 +8,18 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 
-def first():
-    import requests
-    import json
+import requests
+import json
 
-    #TODO: Need to get customers to create a list in first.html
+def first():
 
     apiKey = '611b3ae684fcfa623a511f22aecba2f7'
     payload = {
     	"_id": "",
-        "balance": "",
-        "nickname": "",
-        "rewards": "",
-        "type": "Savings"
+        "first_name": "",
+        "last_name": "",
     }
-    url = 'http://api.reimaginebanking.com/enterprise/accounts?key={}'.format(apiKey)
+    url = 'http://api.reimaginebanking.com/customers?key={}'.format(apiKey)
 
     apibody = requests.get(
         url,
@@ -30,9 +27,11 @@ def first():
 	    headers={'content-type':'application/json'},
 	)
 
-    # parsedjson = json.dumps(apibody)
+    parsed_json = json.loads(apibody.text)
 
-    return apibody.status_code
+    returnString = str(parsed_json[0]['first_name'])
+
+    return returnString
 
 def second():
     #TODO: Need to get the accounts associated to the customer
