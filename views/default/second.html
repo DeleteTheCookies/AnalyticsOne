@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-<body>    
-    
+<body>        
+
 <style>
 
 body { margin: 0; background: #333; }
@@ -57,6 +57,7 @@ header div img {
 
 .flex-item:nth-child(1) {
     align-content: flex-start;
+    flex-direction: column;
     margin: 10px;
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -91,7 +92,11 @@ header div img {
     </style>
 
 <div class="flex-container">
-    <div class="flex-item"><h1>Analytics One</h1></div>
+    <div class="flex-item">
+        <h1>Analytics One</h1>
+            <div><img src = "logo.png" alt="profile" style="width:128px;height:128px;"></img></div>
+    </div>
+        
     <div class="flex-item">
        <h1>Profiles </h1>
         <div><img src = "man-3.png" alt="profile" style="width:128px;height:128px;"></img>
@@ -101,14 +106,17 @@ header div img {
     
 </div>
 
-<script language="javascript">
+<script>
+
 new Chartist.Bar('.ct-chart', {
-  labels: ['Widthdrawels', 'Deposits', 'Balance', 'Rewards'],
-  series: [20, 60, 120, 100]
+  labels: ['Deposits', 'Balance', 'Rewards'],
+  series: [60, 120, 100]
 }, {
   distributeSeries: true
 });
-</script>  
+</script>
+
+
 </body>
 
 </html>
