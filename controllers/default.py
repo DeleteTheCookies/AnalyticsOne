@@ -8,8 +8,28 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 
+import requests
+import json
+
 def first():
-    return dict()
+    
+    apiKey = '611b3ae684fcfa623a511f22aecba2f7'
+    payload = {
+    	"_id": "",
+        "balance": "",
+        "nickname": "",
+        "rewards": "",
+        "type": "Savings"
+    }
+    url = 'http://api.reimaginebanking.com/enterprise/accounts?key={}'.format(apiKey)
+
+    apibody = requests.get(
+        url,
+	    params = payload,
+	    headers={'content-type':'application/json'},
+	)
+
+    return dict(apibody)
 
 def second():
     return dict()
