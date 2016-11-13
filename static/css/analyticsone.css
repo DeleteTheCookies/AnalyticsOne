@@ -52,3 +52,9 @@ a{
     justify-content: center;
     margin-top:20px;
 }
+
+.flex-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

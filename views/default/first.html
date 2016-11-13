@@ -2,5 +2,5 @@
 {{dic1=message}}
 <h1>Customers</h1>
 <ul class="customers-list">
-{{for x in dic1:}}<a href="{{=URL('second')}}"><li>{{=x['first_name'] + ' ' + x['last_name']}}</li></a>{{pass}}
+{{for x in dic1:}}<a href="{{=URL('second?={}'.format(x['_id']))}}"><li>{{=x['first_name'] + ' ' + x['last_name']}}</li></a>{{pass}}
 </ul>
